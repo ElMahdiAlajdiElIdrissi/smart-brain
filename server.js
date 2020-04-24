@@ -23,7 +23,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get("/", (req, res) => {res.send(database.users)});
+app.get("/", (req, res) => {res.send('it is working')});
 
 //SIGNIN POST
 app.post("/signin", (req, res) => { signin.handleSignin(req, res, db, bcrypt) });
@@ -42,5 +42,5 @@ app.post('/imageurl', (req, res) => {image.handleApiCall(req, res)});
 const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
-  console.log("app is running on port", PORT);
+  console.log(`app is running on port ${PORT}`);
 });
